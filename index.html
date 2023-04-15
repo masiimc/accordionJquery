@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+            list-style-type: none;font-family: sans-serif;
+        }
+        main{
+            width: 100%;
+            padding-top: 5rem;
+        }
+        .container{
+            width: 100%;height: 100%;
+            display: flex;justify-content: center;align-content: center;
+            flex-flow: wrap;
+        }
+        h1{
+            text-align: center;
+            width: 100%;
+        }
+        li>div{position: relative;}
+        ul{
+            margin: 2rem auto 0;width: 50%;
+        }
+        li{border: 1px solid rgb(141, 131, 209);}
+        ul>li>p{
+            line-height: 1.9rem;
+            font-size: 1.1rem;
+            padding: 1rem;
+            overflow: hidden;
+        }
+        li>div{
+            background: slateblue;
+            display: flex;align-items: center;justify-content: center;
+            color: #fff;
+            padding: 1rem 3rem;
+            transition: 0.2s;
+        }
+        li>div:hover{
+            background:rgb(77, 67, 146) ;
+        }
+        li>div>span{
+            
+            position: absolute;right: 3rem;
+            top: 50%;transform: translateY(-50%);
+            transition: 0.5s;font-size: 2rem;
+        }
+        .toggle{
+            transform:translateY(-50%) rotate(315deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>jQuery accrdion</h1>
+            <ul>
+                <li>
+                    <div class="sec">
+                        <h1>Click</h1>
+                        <span>+</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa qui dolorem harum rerum amet quisquam at possimus et impedit molestiae doloribus odit ut deleniti atque explicabo numquam, doloremque vitae velit.</p>
+                </li>
+                <li>
+                    <div class="sec">
+                        <h1>Click</h1>
+                        <span>+</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iusto saepe obcaecati quas facere mollitia, vero reprehenderit inventore rerum quibusdam nesciunt eligendi doloremque reiciendis sint laboriosam non a neque officia animi harum quisquam ratione deserunt est commodi. Sit, atque, blanditiis saepe enim laborum quidem, suscipit tenetur corporis recusandae illo incidunt.</p>
+                </li>
+                <li>
+                    <div class="sec">
+                        <h1>Click</h1>
+                        <span>+</span>
+                    </div>
+                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea facere veniam modi nulla explicabo? Error consectetur odio recusandae dolor nobis dolorum laudantium rerum aperiam delectus!</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script>
+        $(document).ready(function (){
+            $('p').hide();
+            $('.sec').click(function (){
+                $(this).next('p').slideToggle()
+                $(this).find('span').toggleClass('toggle')
+            })
+        })
+    </script>
+</body>
+
+</html>
